@@ -1,0 +1,117 @@
+{
+  "name": "Sale",
+  "type": "object",
+  "properties": {
+    "invoice_no": {
+      "type": "string"
+    },
+    "client_ref": {
+      "type": "string",
+      "description": "Client generated reference used to make checkout idempotent"
+    },
+    "items": {
+      "type": "array",
+      "description": "Line snapshots: product_id, product_name, product_code, quantity, unit_price, master_price, line_total, price_override",
+      "items": {
+        "type": "object"
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "discount": {
+      "type": "number"
+    },
+    "tax_total": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "payments": {
+      "type": "array",
+      "description": "method, amount, reference, status (verified | unverified)",
+      "items": {
+        "type": "object"
+      }
+    },
+    "discount_approval": {
+      "type": "object"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "awaiting_verification"
+      ],
+      "enumColors": [
+        "green",
+        "yellow"
+      ]
+    },
+    "unverified_amount": {
+      "type": "number"
+    },
+    "item_count": {
+      "type": "number"
+    },
+    "cashier_id": {
+      "type": "string"
+    },
+    "cashier_name": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "voided"
+      ],
+      "enumColors": [
+        "green",
+        "red"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "print_count": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "invoice_no",
+    "items",
+    "total",
+    "cashier_id"
+  ],
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "data.cashier_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

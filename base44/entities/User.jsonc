@@ -1,0 +1,72 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "job_title": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "staff_role": {
+      "type": "string",
+      "enum": [
+        "owner",
+        "manager",
+        "cashier"
+      ],
+      "enumColors": [
+        "purple",
+        "blue",
+        "gray"
+      ],
+      "rls": {
+        "update": {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      }
+    },
+    "max_discount_percent": {
+      "type": "number",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      }
+    },
+    "can_override_price": {
+      "type": "boolean",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      }
+    },
+    "can_reveal_price": {
+      "type": "boolean",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      }
+    },
+    "is_active": {
+      "type": "boolean",
+      "rls": {
+        "update": {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      }
+    }
+  }
+}

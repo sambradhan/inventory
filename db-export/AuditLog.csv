@@ -1,0 +1,2 @@
+action,description,severity,actor_id,actor_name,actor_email,actor_role,meta,id,created_date,updated_date,created_by_id,is_sample
+"employee_invited","Invited jonson@gmail.cpm as cashier.","warning","6af72c420cf8b3a2f9a6937c","sambradhan Bartaula","sambradhanbartaula@gmail.com","admin","{""email"":""jonson@gmail.cpm"",""role"":""user"",""staff_role"":""cashier""}","6af735e3815d233361927d10","2026-11-13T16:08:03.039000","2026-11-13T16:08:03.039000","service_d140f957-c49f-4c93-b272-f3279c6de029","false"

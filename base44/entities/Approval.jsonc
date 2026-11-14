@@ -1,0 +1,89 @@
+{
+  "name": "Approval",
+  "type": "object",
+  "description": "Short-lived, single-use authorisations issued after the approval PIN is verified (price reveal, price override, discount).",
+  "properties": {
+    "token": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "string",
+      "enum": [
+        "price_reveal",
+        "price_override",
+        "discount"
+      ],
+      "enumColors": [
+        "blue",
+        "yellow",
+        "purple"
+      ]
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "master_price": {
+      "type": "number"
+    },
+    "approved_price": {
+      "type": "number"
+    },
+    "reason": {
+      "type": "string"
+    },
+    "requested_by_id": {
+      "type": "string"
+    },
+    "requested_by_name": {
+      "type": "string"
+    },
+    "authorized_by_id": {
+      "type": "string"
+    },
+    "authorized_by_name": {
+      "type": "string"
+    },
+    "expires_at": {
+      "type": "string"
+    },
+    "used": {
+      "type": "boolean",
+      "default": false
+    },
+    "sale_id": {
+      "type": "string"
+    },
+    "invoice_no": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "token",
+    "purpose"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

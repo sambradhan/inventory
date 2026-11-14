@@ -1,0 +1,52 @@
+{
+  "name": "SecurityConfig",
+  "type": "object",
+  "description": "Hashed approval PIN and security thresholds. Owner-only, never read by the counter app.",
+  "properties": {
+    "pin_hash": {
+      "type": "string"
+    },
+    "pin_salt": {
+      "type": "string"
+    },
+    "pin_owner_id": {
+      "type": "string"
+    },
+    "pin_owner_name": {
+      "type": "string"
+    },
+    "pin_updated_at": {
+      "type": "string"
+    },
+    "max_failed_attempts": {
+      "type": "number",
+      "default": 5
+    },
+    "lock_window_minutes": {
+      "type": "number",
+      "default": 10
+    }
+  },
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

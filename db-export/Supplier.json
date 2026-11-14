@@ -1,0 +1,16 @@
+[
+  {
+    "name": "SDI",
+    "contact_person": "sambardhan",
+    "phone": "98012",
+    "email": "asdw@gmail.com",
+    "address": "Kathmandu 44600",
+    "notes": "",
+    "is_active": true,
+    "id": "6af8380b2fd0cf0040dc0990",
+    "created_date": "2026-11-14T10:29:31.754000",
+    "updated_date": "2026-11-14T10:29:31.754000",
+    "created_by_id": "6af72c420cf8b3a2f9a6937c",
+    "is_sample": false
+  }
+]

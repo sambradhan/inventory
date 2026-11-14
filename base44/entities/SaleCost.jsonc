@@ -1,0 +1,51 @@
+{
+  "name": "SaleCost",
+  "type": "object",
+  "description": "Cost snapshot per sale so profit stays accurate even when purchase prices change. Owner-only.",
+  "properties": {
+    "sale_id": {
+      "type": "string"
+    },
+    "invoice_no": {
+      "type": "string"
+    },
+    "cost_total": {
+      "type": "number"
+    },
+    "revenue_total": {
+      "type": "number"
+    },
+    "lines": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "required": [
+    "sale_id",
+    "cost_total"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "name": "Purchase",
+  "type": "object",
+  "properties": {
+    "supplier_id": {
+      "type": "string"
+    },
+    "supplier_name": {
+      "type": "string"
+    },
+    "invoice_ref": {
+      "type": "string"
+    },
+    "purchase_date": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "description": "product_id, name, code, quantity, unit_cost, line_total",
+      "items": {
+        "type": "object"
+      }
+    },
+    "subtotal": {
+      "type": "number"
+    },
+    "total": {
+      "type": "number"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "credit"
+      ],
+      "enumColors": [
+        "green",
+        "yellow"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    },
+    "recorded_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "items",
+    "total"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

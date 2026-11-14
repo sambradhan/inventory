@@ -1,0 +1,21 @@
+[
+  {
+    "action": "employee_invited",
+    "description": "Invited jonson@gmail.cpm as cashier.",
+    "severity": "warning",
+    "actor_id": "6af72c420cf8b3a2f9a6937c",
+    "actor_name": "sambradhan Bartaula",
+    "actor_email": "sambradhanbartaula@gmail.com",
+    "actor_role": "admin",
+    "meta": {
+      "email": "jonson@gmail.cpm",
+      "role": "user",
+      "staff_role": "cashier"
+    },
+    "id": "6af735e3815d233361927d10",
+    "created_date": "2026-11-13T16:08:03.039000",
+    "updated_date": "2026-11-13T16:08:03.039000",
+    "created_by_id": "service_d140f957-c49f-4c93-b272-f3279c6de029",
+    "is_sample": false
+  }
+]

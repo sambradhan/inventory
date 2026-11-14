@@ -1,0 +1,112 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Part display name, e.g. Front Brake Pad Set"
+    },
+    "code": {
+      "type": "string",
+      "description": "Internal unique code containing special characters, e.g. BP-FRT#2210"
+    },
+    "part_number": {
+      "type": "string",
+      "description": "Manufacturer / aftermarket part number printed on the box"
+    },
+    "oem_number": {
+      "type": "string",
+      "description": "Original equipment (OEM) number this part replaces"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "condition": {
+      "type": "string",
+      "enum": [
+        "new",
+        "used",
+        "refurbished"
+      ],
+      "enumColors": [
+        "green",
+        "yellow",
+        "blue"
+      ],
+      "default": "new"
+    },
+    "category": {
+      "type": "string"
+    },
+    "vehicle_make": {
+      "type": "string"
+    },
+    "vehicle_model": {
+      "type": "string"
+    },
+    "year_from": {
+      "type": "number",
+      "description": "First model year this part fits (0 = fits all)"
+    },
+    "year_to": {
+      "type": "number",
+      "description": "Last model year this part fits (0 = fits all)"
+    },
+    "unit": {
+      "type": "string",
+      "default": "pcs"
+    },
+    "purchase_price": {
+      "type": "number",
+      "description": "Cost price \u2014 owner only, never exposed to cashiers"
+    },
+    "selling_price": {
+      "type": "number"
+    },
+    "stock": {
+      "type": "number",
+      "default": 0
+    },
+    "reorder_level": {
+      "type": "number",
+      "default": 0
+    },
+    "supplier_id": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "code",
+    "selling_price"
+  ],
+  "rls": {
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

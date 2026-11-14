@@ -1,0 +1,92 @@
+{
+  "name": "ShopSettings",
+  "type": "object",
+  "description": "Single shop profile, invoicing and counter policy. Readable by all signed-in staff, editable by the owner only.",
+  "properties": {
+    "shop_name": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "pan_vat": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string",
+      "default": "Rs"
+    },
+    "invoice_prefix": {
+      "type": "string",
+      "default": "INV"
+    },
+    "receipt_footer": {
+      "type": "string"
+    },
+    "tax_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "tax_enabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "cashier_max_discount_percent": {
+      "type": "number",
+      "default": 5
+    },
+    "allow_cashier_price_override": {
+      "type": "boolean",
+      "default": true
+    },
+    "require_override_reason": {
+      "type": "boolean",
+      "default": true
+    },
+    "allow_price_override": {
+      "type": "boolean",
+      "default": true
+    },
+    "low_stock_threshold": {
+      "type": "number",
+      "default": 10
+    }
+  },
+  "rls": {
+    "read": {
+      "$or": [
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        },
+        {
+          "user_condition": {
+            "role": "user"
+          }
+        }
+      ]
+    },
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

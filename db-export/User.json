@@ -1,0 +1,25 @@
+[
+  {
+    "role": "admin",
+    "job_title": "",
+    "phone": "",
+    "staff_role": "owner",
+    "max_discount_percent": 5,
+    "can_override_price": true,
+    "can_reveal_price": true,
+    "is_active": true,
+    "id": "6af72c420cf8b3a2f9a6937c",
+    "created_date": "2026-11-13T15:26:58.561000Z",
+    "updated_date": "2026-11-13T16:08:28.769000Z",
+    "email": "sambradhanbartaula@gmail.com",
+    "full_name": "sambradhan Bartaula",
+    "disabled": null,
+    "disabled_reason": null,
+    "is_verified": true,
+    "force_password_reset": false,
+    "app_id": "6af72c3f0cf8b3a2f9a69377",
+    "is_service": false,
+    "collaborator_role": "editor",
+    "_app_role": "admin"
+  }
+]
